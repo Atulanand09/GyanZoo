@@ -1,5 +1,5 @@
 # GyanZoo
-Live Demo: gyanzoo.netlify.app
+Live Demo: https://gyanzoo.netlify.app/
 
 🚀 Project Overview
 
