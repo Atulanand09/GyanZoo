@@ -1,0 +1,1 @@
+// No JavaScript was present in the file.

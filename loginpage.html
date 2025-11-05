@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication - GYANZoo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylelogin.css">
+</head>
+<body class="bg-zinc-900 text-white flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-md mx-auto">
+        <div class="bg-black border border-zinc-800 rounded-2xl p-8 shadow-2xl">
+            
+            <div id="login-container">
+                <div class="flex flex-col items-center mb-8">
+                    <div class="text-white mb-4">
+                       <img src="logo/logo2.png" alt="GYANZoo Logo" class="w-12 h-12">
+                    </div>
+                    <h1 class="text-3xl font-bold">Welcome Back</h1>
+                    <p class="text-zinc-500 mt-1">Sign in to continue to your account.</p>
+                </div>
+
+                <div id="login-error-message" class="text-red-500 text-center mb-4 text-sm font-medium"></div>
+
+                <form id="login-form" class="space-y-6">
+                    <div>
+                        <label for="login-email" class="text-sm font-medium text-zinc-400">Email</label>
+                        <input type="email" id="login-email" name="email" class="mt-1 w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/50 transition-shadow" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center">
+                            <label for="login-password" class="text-sm font-medium text-zinc-400">Password</label>
+                            <a href="#" class="text-sm text-zinc-500 hover:text-white transition-colors">Forgot password?</a>
+                        </div>
+                        <input type="password" id="login-password" name="password" class="mt-1 w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/50 transition-shadow" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black transition-all">Sign In</button>
+                </form>
+
+                <div class="text-center mt-8">
+                    <p class="text-sm text-zinc-500">
+                        Don't have an account? 
+                        <a href="#" id="show-signup" class="font-semibold text-white hover:underline">Sign up</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="signup-container" class="form-hidden">
+                <div class="flex flex-col items-center mb-8">
+                     <div class="text-white mb-4">
+                        <img src="logo2.png" alt="GYANZoo Logo" class="w-12 h-12">
+                    </div>
+                    <h1 class="text-3xl font-bold">Create an Account</h1>
+                    <p class="text-zinc-500 mt-1">Join us to start your journey.</p>
+                </div>
+
+                <div id="signup-error-message" class="text-red-500 text-center mb-4 text-sm font-medium"></div>
+                
+                <form id="signup-form" class="space-y-6">
+                    <div>
+                        <label for="fullname" class="text-sm font-medium text-zinc-400">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" class="mt-1 w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/50 transition-shadow" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label for="signup-email" class="text-sm font-medium text-zinc-400">Email</label>
+                        <input type="email" id="signup-email" name="email" class="mt-1 w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/50 transition-shadow" placeholder="you@example.com" required>
+                    </div>
+                    <div>
+                        <label for="signup-password" class="text-sm font-medium text-zinc-400">Password</label>
+                        <input type="password" id="signup-password" name="password" class="mt-1 w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-white/50 transition-shadow" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="w-full bg-white text-black font-bold py-3 px-4 rounded-lg shadow-lg hover:bg-zinc-200 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black transition-all">Create Account</button>
+                </form>
+                
+                <div class="text-center mt-8">
+                    <p class="text-sm text-zinc-500">
+                        Already have an account? 
+                        <a href="#" id="show-login" class="font-semibold text-white hover:underline">Sign in</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center my-8">
+                <div class="flex-grow border-t border-zinc-800"></div>
+                <span class="mx-4 text-zinc-600 text-sm">OR</span>
+                <div class="flex-grow border-t border-zinc-800"></div>
+            </div>
+            <div class="space-y-4">
+                <button id="google-auth-btn" class="w-full flex items-center justify-center bg-zinc-800/50 border border-zinc-700 text-white font-medium py-3 px-4 rounded-lg hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-white/50 transition-colors">
+                    <svg class="w-5 h-5 mr-3" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_17_40)"><path fill="#FBBC05" d="M43.611 20.083H42V20H24V28H35.303C33.6747 33.1422 28.8789 36.9449 24 36.9449C16.8218 36.9449 11.055 31.1782 11.055 24C11.055 16.8218 16.8218 11.0551 24 11.0551C27.2455 11.0551 30.1582 12.1819 32.3864 14.1228L38.2136 8.29552C34.3318 4.79545 29.5091 2.5 24 2.5C12.4318 2.5 2.95455 12.0818 2.95455 24C2.95455 35.9182 12.4318 45.5 24 45.5C35.9182 45.5 44.9545 37.5 44.9545 24.5C44.9545 22.8636 44.8182 21.4545 44.5455 20.083H43.611Z"/><path fill="#EA4335" d="M43.611 20.083H42V20H24V28H35.303C33.6747 33.1422 28.8789 36.9449 24 36.9449C20.4514 36.9449 17.2215 35.8504 14.6593 33.9936L20.1244 28.803C21.2583 29.4795 22.5855 29.8551 24 29.8551C28.2159 29.8551 31.8159 27.2455 33.0886 23.3318L38.6364 28.1818C35.8818 33.4545 30.3455 36.9449 24 36.9449C16.8218 36.9449 11.055 31.1782 11.055 24C11.055 16.8218 16.8218 11.0551 24 11.0551C27.2455 11.0551 30.1582 12.1819 32.3864 14.1228L38.2136 8.29552C34.3318 4.79545 29.5091 2.5 24 2.5C12.4318 2.5 2.95455 12.0818 2.95455 24C2.95455 35.9182 12.4318 45.5 24 45.5C35.9182 45.5 44.9545 37.5 44.9545 24.5C44.9545 22.8636 44.8182 21.4545 44.5455 20.083H43.611Z"/><path fill="#34A853" d="M43.611 20.083H42V20H24V28H35.303C33.6747 33.1422 28.8789 36.9449 24 36.9449C16.8218 36.9449 11.055 31.1782 11.055 24C11.055 16.8218 16.8218 11.0551 24 11.0551C27.2455 11.0551 30.1582 12.1819 32.3864 14.1228L38.2136 8.29552C34.3318 4.79545 29.5091 2.5 24 2.5C12.4318 2.5 2.95455 12.0818 2.95455 24C2.95455 35.9182 12.4318 45.5 24 45.5C35.9182 45.5 44.9545 37.5 44.9545 24.5C44.9545 22.8636 44.8182 21.4545 44.5455 20.083H43.611Z"/><path fill="#4285F4" d="M43.611 20.083H42V20H24V28H35.303C33.6747 33.1422 28.8789 36.9449 24 36.9449C16.8218 36.9449 11.055 31.1782 11.055 24C11.055 16.8218 16.8218 11.0551 24 11.0551C27.2455 11.0551 30.1582 12.1819 32.3864 14.1228L38.2136 8.29552C34.3318 4.79545 29.5091 2.5 24 2.5C12.4318 2.5 2.95455 12.0818 2.95455 24C2.95455 35.9182 12.4318 45.5 24 45.5C35.9182 45.5 44.9545 37.5 44.9545 24.5C44.9545 22.8636 44.8182 21.4545 44.5455 20.083H43.611Z"/></g><defs><clipPath id="clip0_17_40"><rect width="48" height="48" fill="white"/></clipPath></defs></svg>
+                    Continue with Google
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scriptlogin.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+.hero-gradient {
+    background: radial-gradient(circle at top, rgba(55, 65, 81, 0.3), transparent 70%);
+}

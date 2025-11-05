@@ -1,0 +1,11 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Style for the drag-over effect */
+.drag-active {
+    background-color: #1f2937; /* A slightly lighter shade */
+    border-color: #3b82f6; /* Blue highlight */
+}
+.preview-hidden {
+    display: none;
+}
